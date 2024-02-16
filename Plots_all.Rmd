@@ -1,0 +1,294 @@
+```{r}
+#Install packages, one time only
+#install.packages("dplyr")
+#install.packages("striprtf")
+#install.packages("tm")
+#install.packages("textstem")
+#install.packages("udpipe")
+#install.packages("tidyverse")
+#install.packages("ggplot2")
+#install.packages("gganimate")
+#install.packages("gifski")
+#install.packages("plotly")
+#install.packages("data.table")
+#install.packages("car")
+#install.packages("colorspace")
+#install.packages("gridExtra")
+#install.packages("grid")
+```
+
+```{r}
+# Load necessary packages
+library(striprtf)
+library(gifski)
+library(textstem)
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(gganimate)
+library(plotly)
+library(data.table)
+library(car)
+library(colorspace)
+library(gridExtra)
+library(grid)
+```
+
+```{r}
+##color scheme
+col1 <- "#d8e1cf" 
+col2 <- "#438484"
+
+#Read all data in from Excel
+WordsLara <- read_excel("dispersionLara.xlsx")
+WordsSod <- read_excel("dispersionSod.xlsx")
+WordsSam <- read_excel("dispersionSam.xlsx")
+splithalf_Sam <- read_excel("dispersion_splithalf_freqprop.xlsx", sheet = 'Sam')
+splithalf_Sod <- read_excel("dispersion_splithalf_freqprop.xlsx", sheet = 'Sod')
+splithalf_Lara <- read_excel("dispersion_splithalf_freqprop.xlsx", sheet = 'Lara')
+#word_count <- data.frame(WordsLara$TotalFreq, WordsLara$Concreteness)
+#res <- cor(word_count, use = "complete.obs")
+
+#Zipfian Plot
+#word_count_Lara <- data.frame(WordsLara$Words,WordsLara$TotalFreq)
+#word_count_Sod <- data.frame(WordsSod$Words,WordsSod$TotalFreq)
+#word_count_Sam <- data.frame(WordsSam$Words,WordsSam$Frequency)
+#colnames(word_count_Lara) <- c("word", "count")
+#colnames(word_count_Sod) <- c("word", "count")
+#colnames(word_count_Sam) <- c("word", "count")
+```
+
+
+##---------------------------------------------------------------- 
+## Zipfian Plot - 
+##----------------------------------------------------------------
+
+```{r Color}
+zipfs_plot <- ggplot(word_count2, aes(x = rank, y = count)) + 
+geom_point(aes(color = "observed")) +
+ theme_bw() + 
+geom_point(aes(y = zipfs_freq, color = "theoretical")) + xlim(0,4200) + ylim(0,35000) +
+labs(x = "Rank", y = "Frequency", title = "Zipf's Law Distribution Soderstrom") +
+ scale_colour_manual(name = "Word Frequencies", values=c("theoretical" = "red", "observed" = "black")) +
+ theme(legend.position = "top")
+
+zipfs_plot
+```
+
+##---------------------------------------------------------------- 
+## Create Data table with all data - 
+##----------------------------------------------------------------
+```{r}
+#data table with all data from Excel
+data_table_Lara<-data.frame(WordsLara$Words,WordsLara$TotalFreq,WordsLara$DPNorm,WordsLara$DA,WordsLara$Concreteness,WordsLara$Comprehension_AoA,WordsLara$Production_AoA)
+colnames(data_table_Lara) <-c("words","freq","DpNorm","Da","Concreteness","AoAComprehension","AoAProduction")
+
+data_table_Sod<-data.frame(WordsSod$Words,WordsSod$TotalFreq,WordsSod$DPNorm,WordsSod$DA,WordsSod$Concreteness,WordsSod$Comprehension_AoA,WordsSod$Production_AoA)
+colnames(data_table_Sod) <-c("words","freq","DpNorm","Da","Concreteness","AoAComprehension","AoAProduction")
+
+data_table_Sam<-data.frame(WordsSam$Words,WordsSam$Frequency,WordsSam$DpNorm,WordsSam$Da,WordsSam$Concreteness,WordsSam$`Production AoA`,WordsSam$`Normed AoA`,WordsSam$`Sam AoA`)
+colnames(data_table_Sam) <-c("words","freq","DpNorm","Da","Concreteness","AoAProduction","AoAComprehension","AoASam")
+```
+
+
+##---------------------------------------------------------------- 
+## DPNorm vs. Frequency - 
+##----------------------------------------------------------------
+
+```{r}
+# Find index of minimum and maximum DpNorm values to label points for Sam
+min_index <- which.min(data_table_Sam$DpNorm)
+max_index <- which.max(data_table_Sam$DpNorm)
+label_data <- data_table_Sam[c(min_index, max_index), ]
+
+plot <- ggplot(NULL, aes(x=log10(freq))) + geom_point(data = data_table_Lara, aes(y=DpNorm, colour = 'Lara', shape = 'Lara'), size = 2.5) + geom_point(data = data_table_Sod, aes(y=DpNorm, colour = 'Soderstrom', shape = 'Soderstrom'), size = 2.5) + geom_point(data = data_table_Sam, aes(y=DpNorm, colour = 'SAYCam', shape = 'SAYCam'), size = 2.5) + scale_color_manual(name = "Corpora", values = c("Lara" = '#E495A5','Soderstrom' = '#86B875', 'SAYCam' = '#7DB0DD')) + scale_shape_manual(name = "Corpora", values = c('Lara' = 16, 'Soderstrom' = 15, 'SAYCam' = 17)) + theme_bw() + scale_x_log10(breaks = c(0,1,2, 3,4), labels = c(0, 10, 100, 1000, 10000),limits = c(0, 4)) + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=12, color="black"), axis.text.y  = element_text(size=12, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + labs(x = "Log Frequency", y = "DPNorm") + geom_text(data = label_data, aes(x = log10(freq), y = DpNorm, label = words), hjust = c(-0.25, 1.4), vjust = c(0, -0.3),size=4.8)
+
+tiff("DPNormAll.tif",width = 10, height = 6, units = "in", res = 600) 
+
+```
+
+##---------------------------------------------------------------- 
+## Histogram of word frequency - 
+##----------------------------------------------------------------
+```{r}
+LaraHist <- ggplot(word_count_Lara, aes(log10(word_count_Lara$count))) + geom_histogram(binwidth = 0.5, origin = 0, fill = '#E495A5',color='black') + labs(x="", y="") + ylim(0,2000) + scale_x_log10() + scale_x_continuous(breaks = c(0,1,2, 3,4,5), labels = c(0, 10, 100, 1000, 10000, 100000),limits = c(0, 5)) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SamHist <- ggplot(word_count_Sam, aes(log10(word_count_Sam$count))) + geom_histogram(binwidth = 0.5, origin = 0, fill = '#7DB0DD',color='black') + labs(x="", y="") + ylim(0,2000) +  scale_x_log10() + scale_x_continuous(breaks = c(0,1,2, 3,4,5), labels = c(0, 10, 100, 1000, 10000, 100000),limits = c(0, 5)) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SodHist <- ggplot(word_count_Sod, aes(log10(word_count_Sod$count))) + geom_histogram(binwidth = 0.5, origin = 0, fill = '#86B875',color='black') + labs(x="", y="") + ylim(0,2000) + scale_x_log10() + scale_x_continuous(breaks = c(0,1,2, 3,4,5), labels = c(0, 10, 100, 1000, 10000, 100000),limits = c(0, 5)) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+tiff("frequencyHist.tif",width = 8, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(SamHist,  left = textGrob("a)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(SodHist, left = textGrob("b)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(LaraHist, left = textGrob("c)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), ncol = 1, left = textGrob("Frequency Count", x = unit(0.5, "npc"), y = unit(0.5, "npc"), rot = 90), bottom = textGrob("Log Frequency in Corpora", x = unit(0.55, "npc"), y = unit(1, "npc"))))
+```
+##---------------------------------------------------------------- 
+## Histogram of splithalf dispersion - 
+##----------------------------------------------------------------
+```{r}
+
+LaraHist <- ggplot(splithalf_Lara, aes(splithalf)) + geom_histogram(binwidth = 0.05, origin = -1, fill = '#E495A5',color='black') + labs(x="", y="") + theme_bw() + ylim(0,650) + xlim(-0.5,0.5) + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=8, color = "black"))
+
+SamHist <- ggplot(splithalf_Sam, aes(splithalf)) + geom_histogram(binwidth = 0.05, origin = -1, fill = '#7DB0DD',color='black') + labs(x="", y="") + ylim(0,650) + xlim(-0.5,0.5) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=8, color = "black"))
+
+SodHist <- ggplot(splithalf_Sod, aes(splithalf)) + geom_histogram(binwidth = 0.05, origin = -1, fill = '#86B875',color='black') + labs(x="", y="") + ylim(0,650) + xlim(-0.5,0.5) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=8, color = "black"))
+
+tiff("splithalfHist.tif",width = 8, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(SamHist,  left = textGrob("a)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(SodHist,  left = textGrob("b)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(LaraHist, left = textGrob("c)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), ncol = 1, left = textGrob("Frequency Count", x = unit(0.5, "npc"), y = unit(0.5, "npc"), rot = 90), bottom = textGrob("Dispersion Difference", x = unit(0.55, "npc"), y = unit(1.8, "npc"))))
+```
+
+##---------------------------------------------------------------- 
+## Histogram of concreteness - 
+##----------------------------------------------------------------
+```{r}
+LaraHist <- ggplot(data_table_Lara, aes(Concreteness)) + geom_histogram(binwidth = 0.5, origin = 0, fill = '#E495A5',color='black') + labs(x="", y="") + ylim(0,1000) + xlim(0,5) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SamHist <- ggplot(data_table_Sam, aes(Concreteness)) + geom_histogram(binwidth = 0.5, origin = 0, fill = '#7DB0DD',color='black') + labs(x="", y="") + ylim(0,1000) + xlim(0,5) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SodHist <- ggplot(data_table_Sod, aes(Concreteness)) + geom_histogram(binwidth = 0.5, origin = 0, fill = '#86B875',color='black') + labs(x="", y="") + ylim(0,1000) + xlim(0,5) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+tiff("concretenessHist.tif",width = 8, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(SamHist,  left = textGrob("a)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(SodHist,  left = textGrob("b)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(LaraHist, left = textGrob("c)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), ncol = 1, left = textGrob("Frequency Count", x = unit(0.5, "npc"), y = unit(0.5, "npc"), rot = 90), bottom = textGrob("Concreteness", x = unit(0.55, "npc"), y = unit(1, "npc"))))
+```
+
+##---------------------------------------------------------------- 
+## Histogram of AoA Production frequency - 
+##----------------------------------------------------------------
+```{r}
+LaraHist <- ggplot(data_table_Lara, aes(AoAProduction)) + geom_bar(width = 1,fill = '#E495A5',color='black') + labs(x="", y="") + ylim(0,150) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SamHist <- ggplot(data_table_Sam, aes(AoAProduction)) + geom_bar(width = 1, fill = '#7DB0DD',color='black') + labs(x="", y="") + ylim(0,150) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SodHist <- ggplot(data_table_Sod, aes(AoAProduction)) + geom_bar(width = 1, fill = '#86B875',color='black') + labs(x="", y="") + ylim(0,150) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+tiff("AoAProductionHist.tif",width = 8, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(SamHist,  left = textGrob("a)", x = unit(1, "npc"), y = unit(.95, "npc"))),
+                   arrangeGrob(SodHist,  left = textGrob("b)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(LaraHist, left = textGrob("c)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), ncol = 1, left = textGrob("Frequency Count", x = unit(0.5, "npc"), y = unit(0.5, "npc"), rot = 90), bottom = textGrob("Normed AoA - Production", x = unit(0.55, "npc"), y = unit(1, "npc"))))
+```
+
+##---------------------------------------------------------------- 
+## Histogram of AoA Comprehension- 
+##----------------------------------------------------------------
+```{r}
+LaraHist <- ggplot(data_table_Lara, aes(AoAComprehension)) + geom_bar(width = 1, fill = '#E495A5',color='black') + labs(x="", y="") + ylim(0,80) + scale_x_continuous(breaks = seq(8, 18, by = 4)) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SamHist <- ggplot(data_table_Sam, aes(AoAComprehension)) + geom_bar(width = 1, fill = '#7DB0DD',color='black') + labs(x="", y="") + ylim(0,80) + scale_x_continuous(breaks = seq(8, 18, by = 4)) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+SodHist <- ggplot(data_table_Sod, aes(AoAComprehension)) + geom_bar(width = 1, fill = '#86B875',color='black') + labs(x="", y="") + ylim(0,80) + scale_x_continuous(breaks = seq(8, 18, by = 4))+ theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=10, color = "black"))
+
+tiff("AoAComprehensionHist.tif",width = 8, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(SamHist,  left = textGrob("a)", x = unit(1, "npc"), 
+                              y = unit(.95, "npc"))), arrangeGrob(SodHist,  left = textGrob("b)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), arrangeGrob(LaraHist, left = textGrob("c)", x = unit(1, "npc"), 
+                               y = unit(.95, "npc"))), ncol = 1, left = textGrob("Frequency Count", x = unit(0.5, "npc"), y = unit(0.5, "npc"), rot = 90), bottom = textGrob("Normed AoA - Comprehension", x = unit(0.55, "npc"), y = unit(1, "npc"))))
+```
+
+```{r}
+
+SamHist <- ggplot(data_table_Sam, aes(AoASam)) + geom_bar(width = 1, fill = '#7DB0DD',color='black') + labs(x="", y="") + ylim(0,120) + scale_x_continuous(breaks = seq(8, 16, by = 2)) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.text.x  = element_text(size=12, color="black"), axis.text.y  = element_text(size=12, color = "black"))
+
+tiff("SamAoAHist.tif",width = 8, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(SamHist), ncol = 1, left = textGrob("Frequency Count", x = unit(0.5, "npc"), y = unit(0.5, "npc"), rot = 90), bottom = textGrob("SAYCam infant reported AoA - Comprehension", x = unit(0.55, "npc"), y = unit(1, "npc"))))
+
+
+#dataFreqAoASam <- data_table
+#dataFreqAoASam[dataFreqAoASam==0] <- NA
+#freqAoASam <- ggplot(dataFreqAoANormed)  + geom_point(aes(x=AoASam,y=freq, color=words)) + geom_smooth(formula = y ~ x,method ="lm",colour="black",se = FALSE, na.rm =TRUE) + xlab("Case Study Infant Aoa")+ ylab("Total Frequency") + scale_x_continuous(breaks = c(8,10,12,14,16,18))
+#ggplotly(freqAoANormed)
+```
+
+##---------------------------------------------------------------- 
+## DPNorm and concreteness - 
+##----------------------------------------------------------------
+```{r}
+WordsAbove1 <- filter(data_table, freq>1)
+WordsAbove1
+FreqNo1<-data.frame(WordsAbove1$words,WordsAbove1$freq,WordsAbove1$DpNorm,WordsAbove1$Da,WordsAbove1$Concreteness,WordsAbove1$AoAComprehension,WordsAbove1$AoAProduction)
+
+colnames(FreqNo1) <-c("words","freq","DpNorm","Da","Concreteness","AoAComprehension","AoAProduction")
+dataConcreteAbove1 <- FreqNo1$Concreteness
+dataConcreteAbove1[dataConcreteAbove1==0] <- NA
+#Look at upper half of concrete words
+#dataConcreteAbove1[dataConcreteAbove1>=3.3] <-NA 
+DispConcrete <- data.frame(dataConcreteAbove1,FreqNo1$Da, FreqNo1$DpNorm)
+colnames(DispConcrete) <- c("concreteness", "Da", "DpNorm")
+DispConcrete <- na.omit(DispConcrete)
+
+cor(DispConcrete$concreteness,DispConcrete$DpNorm, method="spearman")
+cor.test(DispConcrete$concreteness,DispConcrete$DpNorm, method="spearman", exact =FALSE)
+plot(DispConcrete$DpNorm,DispConcrete$concreteness, ylab="Concreteness",xlab="DPNorm")
+abline(lm(DispConcrete$concreteness~DispConcrete$DpNorm), col="red") # regression line (y~x) 
+```
+
+##---------------------------------------------------------------- 
+## DA and Concreteness - 
+##----------------------------------------------------------------
+```{r}
+cor(DispConcrete$Da,DispConcrete$concreteness, method="spearman")
+cor.test(DispConcrete$Da,DispConcrete$concreteness, method="spearman", exact =FALSE)
+plot(DispConcrete$concreteness,DispConcrete$Da)
+abline(lm(DispConcrete$Da~DispConcrete$concreteness), col="red") # regression line (y~x) 
+```
+##---------------------------------------------------------------- 
+## DPNorm and Normed AoA - 
+##----------------------------------------------------------------
+```{r}
+dataNormAbove1 <- FreqNo1$AoAProduction
+#dataNormAbove1[dataNormAbove1==0] <- NA
+dataConcrete<- FreqNo1$Concreteness
+#dataConcrete[dataConcrete==0] <-NA
+#dataConcrete[dataConcrete<=3.3] <-NA
+FreqNo1
+ DispAoANorm <- data.frame(FreqNo1$Da, FreqNo1$DpNorm,FreqNo1$AoAProduction, dataConcrete)
+colnames(DispAoANorm) <- c("Da", "DpNorm", "AoAProduction","Concreteness")
+DispAoANorm <- na.omit(DispAoANorm)
+cor(DispAoANorm$AoAProduction,DispAoANorm$DpNorm, method="spearman")
+cor.test(DispAoANorm$AoAProduction,DispAoANorm$DpNorm, method="spearman", exact =FALSE)
+plot(DispAoANorm$DpNorm,DispAoANorm$AoAProduction, ylab="Production AoA", xlab="DPNorm")
+abline(lm(DispAoANorm$AoAProduction~DispAoANorm$DpNorm), col="red") # regression line (y~x) 
+```
+
+##---------------------------------------------------------------- 
+## DPNorm and Sam AoA and Concreteness with correlations- 
+##----------------------------------------------------------------
+```{r}
+dataAoAAbove1 <- FreqNo1$AoAComprehension
+dataAoAAbove1[dataAoAAbove1==0] <- NA
+dataAoAAbove1[dataAoAAbove1==17] <- NA
+dataConcrete<- FreqNo1$Concreteness
+dataConcrete[dataConcrete==0] <-NA
+dataConcrete[dataConcrete<=3.3] <-NA
+DispAoASam <- data.frame(FreqNo1$Da, FreqNo1$DpNorm,dataAoAAbove1,dataConcrete)
+colnames(DispAoASam) <- c("Da", "DpNorm", "AoAComprehension","Concreteness")
+DispAoASam <- na.omit(DispAoASam)
+cor(DispAoASam$AoAComprehension,DispAoASam$DpNorm, method="spearman")
+cor.test(DispAoASam$AoAComprehension,DispAoASam$DpNorm, method="spearman", exact =FALSE)
+plot(DispAoASam$DpNorm,DispAoASam$AoAComprehension, ylab="Comprehnsion AoA", xlab="DPNorm")
+abline(lm(DispAoASam$AoAComprehension~DispAoASam$DpNorm), col="red") # regression line (y~x) 
+
+cor(DispAoASam$Concreteness,DispAoASam$AoAComprehension, method="spearman")
+cor.test(DispAoASam$Concreteness,DispAoASam$AoAComprehension, method="spearman", exact =FALSE)
+plot(DispAoASam$Concreteness,DispAoASam$AoAComprehension, ylab="Comprehnsion AoA", xlab="Concreteness")
+abline(lm(DispAoASam$AoAComprehension~DispAoASam$Concreteness), col="red") # regression line (y~x) 
+
+cor(DispAoANorm$Concreteness,DispAoANorm$AoAProduction, method="spearman")
+cor.test(DispAoANorm$Concreteness,DispAoANorm$AoAProduction, method="spearman", exact =FALSE)
+plot(DispAoANorm$Concreteness,DispAoANorm$AoAProduction, ylab="Production AoA", xlab="Concreteness")
+abline(lm(DispAoANorm$AoAProduction~DispAoANorm$Concreteness), col="red") # regression line (y~x) 
+```

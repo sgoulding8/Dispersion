@@ -1,0 +1,451 @@
+---
+title: "HeatMaps"
+output: html_notebook
+---
+```{r}
+# Install the relevant libraries - do this one time 
+#install.packages("plyr")
+#install.packages("lubridate")
+#install.packages("ggplot2")
+#install.packages("dplyr")
+#install.packages("data.table")
+#install.packages('curl')
+#install.packages("readxl")
+#install.packages("tidyverse")
+#install.packages("scales")
+#install.packages("plotly")
+#install.packages("gapminder")
+#install.packages("ggpubr")
+#install.packages("gridExtra")
+#install.packages("grid")
+#install.packages("cowplot")
+#install.packages('patchwork')
+#install.packages("colortools")
+#install.packages("viridis")
+#install.packages("RColorBrewer")
+```
+
+```{r}
+# Load the relevant libraries - do this every time
+library(plyr)
+library(lubridate)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(data.table)
+library(readxl)
+library(scales)
+library(patchwork)
+library(plotly)
+library(gapminder)
+library(ggpubr)
+library(gridExtra)
+library(cowplot)
+library(grid)
+library(viridis)
+library(RColorBrewer)
+current_date <- Sys.time()
+```
+
+##---------------------------------------------------------------- 
+## Read in data from Excel
+##----------------------------------------------------------------
+```{r}
+my_data <- read_excel("Heat-Map.xlsm", sheet= "Sheet2")
+SodHeatmap <- read_excel("HeatMapSod.xlsx")
+LaraHeatmap <- read_excel("HeatMapLara.xlsx")
+
+incident <-my_data
+middleFreqSod <- read_excel("dispersionSod.xlsx", sheet= "Mid_freq")
+highFreqSod <- read_excel("dispersionSod.xlsx", sheet= "High_freq")
+lowFreqSod <- read_excel("dispersionSod.xlsx", sheet= "Low_freq")
+
+middleFreqLara <- read_excel("dispersionLara.xlsx", sheet= "Mid_freq")
+highFreqLara <- read_excel("dispersionLara.xlsx", sheet= "High_freq")
+lowFreqLara <- read_excel("dispersionLara.xlsx", sheet= "Low_freq")
+
+middleFreqSam <- read_excel("DispersionHeatMap.xlsx", sheet= "Mid_freq")
+highFreqSam <- read_excel("DispersionHeatMap.xlsx", sheet= "High_freq")
+lowFreqSam <- read_excel("DispersionHeatMap.xlsx", sheet= "Low_freq")
+
+splithalfSam <- read_excel("dispersionSam.xlsx", sheet= "splithalf2")
+splithalfSod <- read_excel("dispersionSod_splithalf.xlsx", sheet= "splithalf2")
+splithalfLara <- read_excel("dispersionLara_splithalf.xlsx", sheet= "splithalf2")
+
+cow <- read_excel("CrossSetHeatmap.xlsx", sheet= "cow")
+tickle <- read_excel("CrossSetHeatmap.xlsx", sheet= "tickle")
+day <- read_excel("CrossSetHeatmap.xlsx", sheet= "day")
+elseData <- read_excel("CrossSetHeatmap.xlsx", sheet= "else")
+kiss <- read_excel("CrossSetHeatmap.xlsx", sheet= "kiss")
+done <- read_excel("CrossSetHeatmap.xlsx", sheet= "done")
+
+#Peek at the data set and attach the column names
+head(middleFreq)
+attach(middleFreq)
+str(middleFreq)
+```
+
+```{r}
+#Assign color variables
+col1 = "#d8e1cf" 
+col2 = "#438484"
+
+lowcol = "#E6E6FA"
+midcol = "#8A2BE2"
+highcol= "#4B0082"
+
+custom_palette_Sod <- c("white", "#86B875", 'darkgreen')
+custom_palette_Sam <- c("white", "#7DB0DD", 'darkblue')
+custom_palette_Lara <- c("white", "#E495A5", '#E75480')
+```
+
+#Working Heatmap for SAYCam (Sam)
+```{r}
+data_long <- incident %>%
+  pivot_longer(cols = -Time, names_to = "Day", values_to = "Count")
+data_long$Time <- as.POSIXct(data_long$Time, format = "%H:%M")
+data_long$Day <- factor(data_long$Day, levels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+data_long$Day <- fct_rev(data_long$Day)
+data_long
+
+heatmapSam <- ggplot(data_long, aes(x = Time, y = Day)) +
+  geom_tile(aes(fill = Count),colour = 'white') +  scale_x_datetime(limits = as.POSIXct(strptime(c("1899-12-31 00:00","1899-12-31 14:00"), format = "%Y-%m-%d %H:%M")),labels=date_format("%H:%M"), breaks = date_breaks("3 hours")) + scale_fill_gradient(low = 'lightcyan2', high = "#7DB0DD", na.value = "white", limits=c(1, 13), breaks=seq(1,13,by=3)) + 
+  guides(fill=guide_legend("Number of Recordings")) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=10), axis.text.y  = element_text(size=10)) +  labs(x = "", y = "")
+
+```
+
+#Working Heatmap for Soderstrom
+```{r}
+data_long_Sod <- SodHeatmap %>%
+  pivot_longer(cols = -Time, names_to = "Day", values_to = "Count")
+data_long_Sod$Time <- as.POSIXct(data_long_Sod$Time, format = "%H:%M")
+data_long_Sod$Day <- factor(data_long_Sod$Day, levels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+data_long_Sod$Day <- fct_rev(data_long_Sod$Day)
+data_long_Sod
+
+heatmapSod <- ggplot(data_long_Sod, aes(x = Time, y = Day)) +
+  geom_tile(aes(fill = Count),colour = 'white') + scale_fill_gradient(low = col1, high = '#86B875', na.value = "white", limits=c(1, 4), breaks=seq(1,4,by=1)) + scale_x_datetime(date_labels = "%H:%M",  limits = as.POSIXct(c(format(current_date, "%Y-%m-%d 06:00"), format(current_date, "%Y-%m-%d 18:00"))), date_breaks = "2 hours") +
+  guides(fill=guide_legend("Number of Recordings")) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=10), axis.text.y  = element_text(size=10)) +  labs(x = "", y = "")
+
+```
+#Working Heatmap for Lara
+```{r}
+data_long_Lara <- LaraHeatmap %>%
+  pivot_longer(cols = -Time, names_to = "Day", values_to = "Count")
+data_long_Lara$Time <- as.POSIXct(data_long_Lara$Time, format = "%H:%M")
+data_long_Lara$Day <- factor(data_long_Lara$Day, levels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+data_long_Lara$Day <- fct_rev(data_long_Lara$Day)
+data_long_Lara
+
+heatmapLara <- ggplot(data_long_Lara, aes(x = Time, y = Day)) +
+  geom_tile(aes(fill = Count),colour = 'white') + scale_fill_gradient(low = 'mistyrose', high = '#E495A5', na.value = "white", limits=c(1, 5), breaks=seq(1,5,by=1)) + scale_x_datetime(date_labels = "%H:%M",  limits = as.POSIXct(c(format(current_date, "%Y-%m-%d 06:00"), format(current_date, "%Y-%m-%d 21:00"))), date_breaks = "3 hours") + guides(fill=guide_legend("Number of Recordings")) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=12), axis.title.y = element_text(size=12), axis.text.x  = element_text(size=10), axis.text.y  = element_text(size=10)) +  labs(x = "", y = "")
+```
+# Combine time of day plots
+```{r}
+require(grid)   # for the textGrob() function
+
+figure <- ggarrange(heatmapSam + rremove("ylab") + rremove("xlab"), heatmapSod + rremove("ylab") + rremove("xlab"), heatmapLara + rremove("ylab") + rremove("xlab"),
+                    labels = NULL,
+                    ncol = 1, nrow = 3,
+                    heights = c(2, 2, 2),
+                    common.legend = FALSE, legend = "right",
+                    align = "hv", 
+                    font.label = list(size = 10, color = "black", face = "bold", family = NULL, position = "top"))
+
+annotate_figure(figure, left = textGrob("Day of Week", rot = 90, vjust = 1, gp = gpar(cex = 1.3)), bottom = textGrob("Time of Day", gp = gpar(cex = 1.3)))
+```
+```{r}
+tiff("heatmap_time_of_day.tif",width = 10, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(heatmapSam, left = textGrob("a)", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(0.9, "npc"))), 
+                   arrangeGrob(heatmapSod, left = textGrob("b)", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(0.9, "npc"))),
+                   arrangeGrob(heatmapLara, left = textGrob("c)", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(0.9, "npc"))), ncol = 1, bottom = textGrob("Time of Day", x = unit(0.5, "npc"), y = unit(1.5, "npc"))))
+```
+
+tiff("CrossDataset.tif",width = 10, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(dayMap, left = textGrob("a) Day", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(.65, "npc"))), 
+                   arrangeGrob(cowMap, left =textGrob("b) Cow", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(.65, "npc"))),
+                   arrangeGrob(elseMap, left=textGrob("c) Else", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(.65, "npc"))), right = legend, ncol = 1, bottom = textGrob("Session", x = unit(0.6, "npc"), y = unit(2, "npc"))))
+# Mid frequency words dispersion across sessions for Soderstrom
+```{r}
+midSod<-ggplot(data=middleFreqSod,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + 
+  scale_fill_gradientn(colors = custom_palette_Sod, limits=c(0, 40), breaks=seq(0,40,by=10)) +
+  guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c('fall, 0.40','diaper, 0.48','watch, 0.52','find, 0.54','bunny, 0.65','woof, 0.66','foot, 0.70','dada, 0.72','tickle, 0.82','vroom, 0.87')) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=12, margin = margin(r = 10)), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=12, color = "black")) +
+  labs(x = "", y = "Mid Frequency Words")
+midSod
+```
+# Low frequency words dispersion across sessions for Soderstrom
+```{r}
+lowSod<-ggplot(data=lowFreqSod,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) +
+  scale_fill_gradientn(colors = custom_palette_Sod,limits=c(0, 5), breaks=seq(0,5,by=1)) +
+  guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c('stay, 0.95','crank, 0.96','plate, 0.96','wrap, 0.96','tape, 0.97','pocket, 0.97','middle, 0.97','audio, 0.97','address, 0.97','cloth, 0.98')) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=12), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=12, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "Low Frequency Words")
+lowSod
+```
+# High frequency words dispersion across sessions for Soderstrom
+```{r}
+highSod<-ggplot(data=highFreqSod,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) +
+  scale_fill_gradientn(colors = custom_palette_Sod,limits=c(0, 200), breaks=seq(0,200,by=50)) +
+  guides(fill=guide_legend(title="Frequency \nCount")) + scale_y_discrete(limits = c('be, 0.07','that, 0.07','you, 0.08','to, 0.09','go, 0.09', 'I, 0.14','it, 0.17','ah, 0.21', 'the, 0.21', 'hm, 0.22'))+
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=12, margin = margin(r = 20)), axis.text.x  = element_text(size=10, color="black"), axis.text.y  = element_text(size=12, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "High Frequency Words")
+highSod
+print(max(highFreqSod['Count']))
+```
+
+```{r}
+get_legend<-function(myggplot){
+  tmp <- ggplot_gtable(ggplot_build(myggplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)
+}
+
+legend <- get_legend(highSod)
+highSod <- highSod + theme(legend.position="none") + theme(plot.margin = unit(c(0, 0, 0, 0.9), "cm"))
+midSod <- midSod + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 0, 0, 0.5), "cm"))
+lowSod <- lowSod + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 0, 0, 0.25), "cm"))
+```
+
+# Combine plots for Soderstrom
+```{r}
+tiff("frequencySod.tif",width = 10, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(highSod),
+                   arrangeGrob(midSod),
+                   arrangeGrob(lowSod), right = legend, ncol = 1, bottom = textGrob("Session", x = unit(0.6, "npc"), y = unit(2, "npc"))))
+```
+# Mid frequency words dispersion across sessions for Lara
+```{r}
+midLara<-ggplot(data=middleFreqLara,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + 
+  scale_fill_gradientn(colors=custom_palette_Lara, limits=c(0, 40), breaks=seq(0,40,by=10)) +
+  guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c('anything, 0.40','around, 0.44','own, 0.44','feed, 0.53','kitchen, 0.56','yummy, 0.59','cuddle, 0.61','egg, 0.71','chip, 0.75','tower, 0.78')) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=14), axis.title.y = element_text(size=10), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black")) +
+  labs(x = "", y = "Mid Frequency Words")
+midLara
+```
+# Low frequency words dispersion across sessions for Lara
+```{r}
+lowLara<-ggplot(data=lowFreqLara,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) +
+  scale_fill_gradientn(colors=custom_palette_Lara,limits=c(0, 5), breaks=seq(0,5,by=1)) +
+  guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c('routine, 0.97','maker, 0.97','bead, 0.98','visitor, 0.99','proficient, 1.00','male, 1.00','mail, 1.00','feast, 1.00','dart, 1.00','cello, 1.00')) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=10), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "Low Frequency Words")
+lowLara
+```
+# High frequency words dispersion across sessions for Lara
+```{r}
+highLara<-ggplot(data=highFreqLara,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) +
+  scale_fill_gradientn(colors=custom_palette_Lara,limits=c(0, 1000), breaks=seq(0,1000,by=200)) +
+  guides(fill=guide_legend(title="Frequency \nCount")) + scale_y_discrete(limits = c('be, 0.04','you, 0.06', 'do, 0.07', 'to, 0.08','not, 0.08','it, 0.08','a, 0.08','I, 0.09','the, 0.10','that, 0.10')) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=10), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "High Frequency Words")
+highLara
+print(max(highFreqLara['Count']))
+```
+
+```{r}
+get_legend<-function(myggplot){
+  tmp <- ggplot_gtable(ggplot_build(myggplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)
+}
+
+legend <- get_legend(highLara)
+highLara <- highLara + theme(legend.position="none") + theme(plot.margin = unit(c(0, 0, 0, 0.9), "cm"))
+midLara <- midLara + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 0, 0, 0.2), "cm"))
+lowLara <- lowLara + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 0, 0, 0.1), "cm"))
+```
+
+# Combine plots for Lara
+```{r}
+tiff("frequencyLara.tif",width = 12, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(highLara), 
+                   arrangeGrob(midLara),
+                   arrangeGrob(lowLara), right = legend, ncol = 1, bottom = textGrob("Session", x = unit(0.6, "npc"), y = unit(2, "npc"))))
+```
+# Mid frequency words dispersion across sessions for SAYCam
+```{r}
+midSam<-ggplot(data=middleFreqSam,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + 
+  scale_fill_gradientn(colors=custom_palette_Sam, limits=c(0, 40), breaks=seq(0,40,by=10),na.value = "white") +
+  guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c("why, 0.30","two, 0.33","hey, 0.39","pretty, 0.39","sit, 0.42","outside, 0.47","toy, 0.51","happy, 0.63", "cup, 0.64","clap, 0.79")) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=14), axis.title.y = element_text(size=10), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black")) +
+  labs(x = "", y = "Mid Frequency Words")
+midSam
+```
+# Low frequency words dispersion across sessions for SAYCam
+```{r}
+lowSam<-ggplot(data=lowFreqSam,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) +
+  scale_fill_gradientn(colors=custom_palette_Sam,limits=c(0, 5), breaks=seq(0,5,by=1),na.value = "white") +
+  guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c("tee, 0.99", "teenager, 0.99", "tapping, 0.99","system, 0.99","swipe, 0.99","sweatshirt, 0.99","sweat, 0.99","tease, 0.99","tank, 0.99","swivel, 0.99")) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=10), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "Low Frequency Words")
+lowSam
+```
+# High frequency words dispersion across sessions for SAYCam
+```{r}
+highSam<-ggplot(data=highFreqSam,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) +
+  scale_fill_gradientn(colors=custom_palette_Sam,limits=c(0, 500), breaks=seq(0,500,by=100),na.value = "white") +
+  guides(fill=guide_legend(title="Frequency \nCount")) + scale_y_discrete(limits = c('you, 0.15','to, 0.15','that, 0.15','be, 0.16','it, 0.17','i, 0.18','the, 0.18', 'yeah, 0.21','a, 0.26','and, 0.28')) +
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=10), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "High Frequency Words")
+highSam
+print(max(highFreqSam['Count']))
+```
+
+```{r}
+get_legend<-function(myggplot){
+  tmp <- ggplot_gtable(ggplot_build(myggplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)
+}
+
+legend <- get_legend(highSam)
+highSam <- highSam + theme(legend.position="none") + theme(plot.margin = unit(c(0, 0, 0, 1), "cm"))
+midSam <- midSam + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 0, 0, 0.65), "cm"))
+lowSam <- lowSam + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 0, 0, 0.2), "cm"))
+```
+
+# Combine plots for SAYCam
+```{r}
+tiff("frequencySam.tif",width = 10, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(highSam), 
+                   arrangeGrob(midSam),
+                   arrangeGrob(lowSam), right = legend, ncol = 1, bottom = textGrob("Session", x = unit(0.6, "npc"), y = unit(2, "npc"))))
+```
+
+# Splithalf dispersion plot for Lara
+```{r}
+splithalfLaraPlot<-ggplot(data=splithalfLara,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradientn(colors=custom_palette_Lara,limits=c(0, 20), breaks=seq(0,20,by=5)) + guides(fill=guide_legend(title="Frequency \nCount")) + scale_y_discrete(limits = c("lunch, -0.46","somebody, -0.41","excellent, -0.37","noodle, -0.025","than, -0.025","brother, -0.025","pooh, 0.24", "bum, 0.25","winnie, 0.25")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=22), axis.title.y = element_text(size=22), axis.text.x  = element_text(size=12, color="black"), axis.text.y  = element_text(size=12, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "")
+splithalfLaraPlot
+```
+
+# Splithalf dispersion plot for SAYCam
+```{r}
+splithalfSamPlot<-ggplot(data=splithalfSam,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradientn(colors=custom_palette_Sam,limits=c(0, 20), breaks=seq(0,20,by=5)) + guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c("bop, -0.39","pants, -0.32","blue, -0.30","nothing, 0.036","earlier, 0.036","whack, 0.036","many, 0.50", "weird, 0.51","fun, 0.59")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=22), axis.title.y = element_text(size=22), axis.text.x  = element_text(size=12, color="black"), axis.text.y  = element_text(size=12, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) +
+  labs(x = "", y = "")
+splithalfSamPlot
+```
+# Splithalf dispersion plot for Sod
+```{r}
+splithalfSodPlot<-ggplot(data=splithalfSod,aes(Session, Word)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradientn(colors=custom_palette_Sod,limits=c(0, 20), breaks=seq(0,20,by=5)) + guides(fill=guide_legend(title="Frequency")) + scale_y_discrete(limits = c("away, -0.48","keep, -0.46","next, -0.43","job, 0.005","thursday, 0.005","messy, 0.005","later, 0.41", "poor, 0.46","whoops, 0.50")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=22), axis.title.y = element_text(size=22), axis.text.x  = element_text(size=12, color="black"), axis.text.y  = element_text(size=12, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + 
+  labs(x = "", y = "")
+splithalfSodPlot
+```
+
+```{r}
+get_legend<-function(myggplot){
+  tmp <- ggplot_gtable(ggplot_build(myggplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)
+}
+
+legend <- get_legend(splithalfLaraPlot)
+splithalfSamPlot <- splithalfSamPlot + theme(legend.position="none") + theme(plot.margin = unit(c(0, 1, 0, 0.35), "cm"))
+splithalfSodPlot <- splithalfSodPlot + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 1, 0, 0.15), "cm"))
+splithalfLaraPlot <- splithalfLaraPlot + theme(legend.position="none") + theme(plot.margin = unit(c(-0.5, 1, 0, 0), "cm"))
+```
+
+# Combine splithalf dispersion plots for all three corpora
+```{r}
+tiff("splithalf.tif",width = 10, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(splithalfSamPlot, left = textGrob("a)", x = unit(2.5, "npc"), 
+                               y = unit(.95, "npc"))), 
+                   arrangeGrob(splithalfSodPlot, left =textGrob("b)", x = unit(2.5, "npc"), 
+                               y = unit(.95, "npc"))),
+                   arrangeGrob(splithalfLaraPlot, left=textGrob("c)", x = unit(2.5, "npc"), 
+                               y = unit(.95, "npc"))), ncol = 1, bottom = textGrob("Session", x = unit(0.55, "npc"), y = unit(2, "npc"))))
+```
+# Frequency across session heatmap for the word "done" in all three corpora
+```{r}
+doneMap <-ggplot(data=done,aes(Session, Dataset)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradient(low = "white", high = "mediumorchid", na.value = "white",limits=c(0, 20), breaks=seq(0,20,by=5)) + guides(fill=guide_legend(title="Frequency")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + 
+  labs(x = "", y = "")
+doneMap
+```
+# Frequency across session heatmap for the word "cow" in all three corpora
+```{r}
+cowMap <-ggplot(data=cow,aes(Session, Dataset)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradient(low = "white", high = "mediumorchid", na.value = "white",limits=c(0, 30), breaks=seq(0,30,by=6)) + guides(fill=guide_legend(title="Frequency")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + 
+  labs(x = "", y = "")
+cowMap
+```
+# Frequency across session heatmap for the word "tickle" in all three corpora
+```{r}
+tickleMap <-ggplot(data=tickle,aes(Session, Dataset)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradient(low = "white", high = "mediumorchid", na.value = "white",limits=c(0, 20), breaks=seq(0,20,by=5)) + guides(fill=guide_legend(title="Frequency")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + 
+  labs(x = "", y = "")
+tickleMap
+```
+# Frequency across session heatmap for the word "day" in all three corpora
+```{r}
+dayMap <-ggplot(data=day,aes(Session, Dataset)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradient(low = "white", high = "mediumorchid", na.value = "white",limits=c(0, 30), breaks=seq(0,30,by=6)) + guides(fill=guide_legend(title="Frequency")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + 
+  labs(x = "", y = "")
+dayMap
+```
+# Frequency across session heatmap for the word "else" in all three corpora
+```{r}
+elseMap <-ggplot(data=elseData,aes(Session, Dataset)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradient(low = "white", high = "mediumorchid", na.value = "white",limits=c(0, 30), breaks=seq(0,30,by=6)) + guides(fill=guide_legend(title="Frequency")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + 
+  labs(x = "", y = "")
+elseMap
+```
+# Frequency across session heatmap for the word "kiss" in all three corpora
+```{r}
+kissMap <-ggplot(data=kiss,aes(Session, Dataset)) + geom_tile(aes(fill = Count),colour = "grey", na.rm = FALSE) + scale_fill_gradient(low = "white", high = "mediumorchid", na.value = "white",limits=c(0, 20), breaks=seq(0,20,by=5)) + guides(fill=guide_legend(title="Frequency")) + theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(),panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), axis.title.x = element_text(size=20), axis.title.y = element_text(size=20), axis.text.x  = element_text(size=8, color="black"), axis.text.y  = element_text(size=10, color = "black"), legend.title=element_text(size=14), legend.text=element_text(size=14)) + 
+  labs(x = "", y = "")
+kissMap
+```
+
+```{r}
+get_legend<-function(myggplot){
+  tmp <- ggplot_gtable(ggplot_build(myggplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)
+}
+
+legend <- get_legend(cowMap)
+dayMap <- dayMap + theme(legend.position="none") + theme(plot.margin = unit(c(0, 1, 0, 0), "cm"))
+cowMap <- cowMap + theme(legend.position="none") + theme(plot.margin = unit(c(0, 1, 0, 0), "cm"))
+elseMap <- elseMap + theme(legend.position="none") + theme(plot.margin = unit(c(0, 1, 0, 0), "cm"))
+```
+
+# combine plots for "day", "cow", and "else"
+```{r}
+tiff("CrossDataset.tif",width = 10, height = 6, units = "in", res = 600) 
+
+print(grid.arrange(arrangeGrob(dayMap, left = textGrob("a) Day", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(.65, "npc"))), 
+                   arrangeGrob(cowMap, left =textGrob("b) Cow", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(.65, "npc"))),
+                   arrangeGrob(elseMap, left=textGrob("c) Else", gp=gpar(fontface = 'bold'), x = unit(1, "npc"), 
+                               y = unit(.65, "npc"))), right = legend, ncol = 1, bottom = textGrob("Session", x = unit(0.6, "npc"), y = unit(2, "npc"))))
+```

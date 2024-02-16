@@ -1,0 +1,92 @@
+```{r}
+# Install necessary packages if not already installed
+# install.packages("hunspell")
+# install.packages("dplyr")
+# install.packages("striprtf")
+# install.packages("tm")
+# install.packages("textstem")
+# install.packages("udpipe")
+# install.packages("tidyverse")
+# install.packages("qdapRegex")
+# install.packages("tokenizers")
+# install.packages("stringi")
+#install.packages("readtext")
+#citation(package='hunspell')
+```
+
+```{r}
+# Load required libraries
+library(hunspell)
+library(dplyr)
+library(striprtf)
+library(tm)
+library(textstem)
+library(tidyverse)
+library(readxl)
+library(qdapRegex)
+library(tokenizers)
+library(stringi)
+library(udpipe)
+library(data.table)
+library(readtext)
+```
+
+```{r}
+# Read in text files from directory with uncleaned text files
+#store <- read_excel("EditedUtterancesNoSam.xlsx", range ="C2:C16497",col_names = FALSE)
+#store <- readtext::readtext("Soderstrom/Raw_Text/*.txt")
+store <- readtext::readtext("Lara/Raw_Text/*.txt")
+store
+```
+
+
+```{r}
+# Annotate the text using the udpipe package for English language, gives tokens, sentences, lemmas, parts of speech, etc. (https://cran.r-project.org/web/packages/udpipe/vignettes/udpipe-annotation.html#annotate-text)
+anno <- udpipe(store, "english")
+anno
+```
+
+```{r}
+# Extract lemma (base forms of words) and associated session id from the annotated text
+lemma <-anno[, c("doc_id","lemma")]
+lemma
+```
+```{r}
+# Words replaced for all corpora, common misspellings and shortening words with multiple letter endings
+lemma[[2]] = str_replace_all(lemma[[2]],c("aa+"="a", "ee+$"="ee","ii+"="i","oo+$"="oo","uu+"="u","yy+"="y","hh+"="h","rr+$"="r","mm+$"="m","ww+$"="w","\\(na\\)"="","(ba)+$"="ba", "^(ha)+"="ha", "^(ma)+"="ma","^(la)+"="la", c("\\(kity\\)"="kitty","\\(kitties\\)"="kitty","\\(kittie\\)"="kitty","\\(kitten\\)"="kitty"), c("\\(birdy\\)"="bird","\\(birdie\\)"="bird","\\(birdies\\)"="bird"), c("\\(doggie\\)"="dog","\\(doggies\\)"="dog","\\(doggy\\)"="dog"), c("hiccups"="hiccup","hickup"="hiccup","hickups"="hiccup"), c("aah"="ah","ahh"="ah"), c("\'.*$"=""), c("uhh"="uh"),c("brekky"="brekkie"), c("chupey"="chupi"),c("lovly"="lovely"), c("smily"="smiley"), c("\\(ther\\)"="there"), c("\\(thre\\)"="three"),c("\\(favourite\\)"="favorite"),c("\\(litle\\)" ="little"),c("\\(lovie\\)" ="lovey"),c("\\(blankie\\)"="blanket")))
+#Removes any white space surrounding words, anything that is not a letter or apostrophe
+lemma$clean <- rm_non_words(lemma[[2]])
+```
+
+```{r}
+# Count occurrences of each cleaned word
+clean_occur <- as.data.frame(table(lemma$clean))
+clean_occur
+```
+
+```{r}
+# Identify potential misspelled words using hunspell
+bad.words <- hunspell(lemma$clean)
+bad.words.unique <- unique(unlist(bad.words))
+# Count occurrences of potential misspelled words
+bad_count <- as.data.frame(table(unlist(bad.words)))
+# Filter out frequently occurring potential misspelled words
+data <- bad_count[bad_count$Freq > 10,]
+print(data$Var1)
+# Create regular expression patterns for identified misspelled words
+bad.whole.words <- paste0("\\b(", paste0(data$Var1, collapse="|"), ")\\b")
+bad_count_regex <- gsub(bad.whole.words,"",bad.words.unique)
+bad_count_regex <- str_subset(bad_count_regex, ".+")
+bad_count_regex <- paste0("\\b", bad_count_regex, "\\b")
+```
+
+```{r}
+# Remove identified misspelled words from the cleaned lemma data
+lemma$clean_final <- stri_replace_all_regex(lemma$clean,bad_count_regex,"", vectorize_all = FALSE)
+# Extract unique document IDs; Iterate over document IDs and write cleaned lemma data to separate files
+list <- unique(lemma$doc_id)
+for (x in list) {
+  write.table(lemma$clean_final[lemma$doc_id == x], file = paste("Lara/Cleaned", x, sep = "/"), append = FALSE, sep = " ", dec = ".", row.names = FALSE, col.names = TRUE)
+}
+```
+
