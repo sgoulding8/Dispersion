@@ -1,0 +1,134 @@
+okay , here we go.
+it's ten minutes to twelve.
+ug.
+on Thursday.
+October second.
+oh , are you gonna crawl.
+come on over.
+come here.
+let's see.
+come on over this way , come on.
+see if you can do it.
+come on.
+ah , can you do it.
+come on , use your arms.
+can you come this way.
+come on.
+I'll help you.
+see if you can come.
+yeah , come on.
+oh , it's so hard.
+ap.
+oh , what'd you find.
+that's not good for you.
+gah.
+guh.
+mrow.
+ruff.
+what was that.
+meow.
+bear , rowr.
+see if you can get it , yeah , go baby go.
+come on.
+geh.
+you gotta get out over those feet.
+oh , come on.
+mvuh.
+mguh.
+ah.
+ah.
+rowr.
+woof.
+what was that.
+rowr.
+what was that.
+come on.
+come here.
+come on.
+that's it , take your time , move your arms.
+ah , oh , he's such a big boy.
+ah.
+yeah.
+here , come over this way.
+come on.
+ah.
+yeah.
+come on.
+awaw.
+ayay.
+come see me.
+open shut them , open shut them , give a little clap clap clap.
+can you clap.
+look.
+clap clap clap.
+this a way.
+, yeah.
+ah , come on.
+come on.
+you can do it.
+pushy , pushushushushushushush.
+shah , not quite.
+oh.
+heh.
+oh , you're getting so big.
+mguh.
+aguh.
+don't fall down.
+I'll get you a pillow , but.
+you know what , I'm gonna stretch you this way.
+relax , that's good.
+it's okay.
+, you wanna play with the toy.
+there.
+ahah.
+yeah.
+bear rowr geese elephant.
+here.
+ah.
+come get them.
+oh.
+I know , it's very sad.
+come on.
+dog.
+see , dog.
+ruff.
+this old man , he played one , he played knickknack on my drum with a
+	knickknack paddywack give a dog a bone this old man came rolling home.
+what's the matter.
+what's the matter.
+you wanna come sit with me for a moment.
+you're okay.
+no , you don't eat that.
+, you want the microphone , no no no no no no no.
+yeah.
+here.
+let's get you something to chew on.
+you want some.
+yeah.
+come on.
+I hafta get you something to chew on.
+oh.
+oh , boy.
+yummy yummy.
+there you go.
+hm hm hm hm hm hm hm.
+there you go.
+there you go.
+alright , I'm gonna take a quick two minutes , be right back.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017473-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child , TOY Media
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;07.08|male|||Target_Child|||
+@ID:	eng|Soderstrom|TOY|||||Media|||
+@Media:	000708a, audio
+@Time Duration:	11:45-11:51
+@Date:	02-OCT-2003
+@Warning:	Overlaps and the speech of CHI are not carefully checked.
+@Comment:	TOY is playing in background
+@Types:	long, preverbal, TD
+@Comment:	loud rumbling in background , like a car motor
+@Comment:	CHI begins to cry , not transcribed
+@End

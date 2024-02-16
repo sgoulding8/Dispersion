@@ -1,0 +1,159 @@
+yeah.
+hello.
+hagh.
+hello.
+hello.
+heahaghe.
+hahaha.
+peekaboo.
+euheh.
+hello.
+yehah.
+yeahah.
+Theo.
+it's Theo.
+ah , boo.
+ehah.
+Theo.
+udooh.
+bootiboo.
+Theo.
+peekaboo ,.
+hiya , hiya.
+ahe ,.
+hehehe.
+hello.
+yah.
+heyah.
+baheuh , bahdada.
+da da dada.
+da da dada.
+ahah.
+dadadada.
+dadadada.
+dadada.
+ahah.
+dada.
+ahehe.
+dadadada.
+eh.
+peekaboo.
+hi.
+uhlai.
+hello.
+heha.
+hahehaheha.
+mm , hello.
+you wanna play , I can get you a toy to play with in there.
+how about this stuff.
+yay.
+wanna play with that funny guy.
+oh , it's gotta losing his batteries.
+well , see what you think.
+or is it too hard to sit.
+there you go.
+look at that funny guy.
+oh there's your thing.
+that's good to have.
+I was looking for that.
+and this is Charlie's.
+oowehoowehoo.
+hey.
+and it's clean.
+okay.
+eyah eyah.
+eyah eyah yah.
+rwows.
+hm.
+be.
+ooh ooh.
+what are you doing.
+ehwoo.
+oo.
+can you see the sunshine.
+mm , see the dust in the sunshine.
+it's pretty isn't it.
+eh hi , eh.
+ehhhe ah.
+eheh.
+ehhe.
+funny boy.
+eh.
+ehheuh.
+you okay.
+uheah , oowoh.
+ailaiyaiyaiya.
+aiyaiyaiyaiya.
+that one's yours.
+oh yeah.
+those are for Charlie.
+I forgot.
+hm.
+how you doing.
+you like it in there.
+awoo.
+awoowoo.
+awooghwoogh.
+let's see , how about this.
+it's fine.
+ugh.
+what's that.
+woo.
+what is that thing.
+dahd.
+gee.
+dahgee.
+dahgee.
+those are dirty.
+definitely.
+huh.
+ow.
+hm.
+huh , what a pain.
+oh there's that little hat.
+that's good.
+dirty.
+dadadadada.
+dadadadada.
+ehuh.
+what's the matter , honey pie.
+I don't know why we have that.
+yadah.
+dadeeguh.
+uhbuhueh mamueah.
+mama.
+you want mama.
+uhweah.
+hi.
+you want mama.
+hi , I got you.
+we should turn that off , huh.
+I got you.
+you need hugs.
+lailaidah.
+dada , not dada , I'm mama.
+mama.
+where's mama.
+right here , I'm mama.
+mama , yeah.
+ahdeahya.
+say mama.
+oh.
+uhuhuh.
+woah you okay.
+wanna put some stuff on your face.
+you look a little spotty.
+here.
+would you let me do this.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017502-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;09.15|male|||Target_Child|||
+@Media:	000915d, audio
+@Time Duration:	9:22-9:31
+@Date:	12-DEC-2003
+@Types:	long, preverbal, TD
+@End

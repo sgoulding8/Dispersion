@@ -1,0 +1,159 @@
+okay , that was just a couple minute break.
+what's the matter.
+you want something to eat.
+do you want something to eat.
+no , don't pull on that.
+here.
+want let's see what we can find to feed you.
+hm.
+want some cottage cheese.
+that's yummy.
+and what else , can we feed you.
+some rice cake.
+how about that.
+that's a good lunch.
+hm.
+ye.
+gwah guah.
+gwagwah.
+okay , scoot right up.
+you know , I'm gonna put the tray on.
+watch out.
+what.
+yeah.
+definitely.
+good.
+here's here's some rice cake.
+get some spoons.
+Theo was going crazy there for a few minutes.
+yeah.
+booby trapped.
+what's daddy doing.
+crash , bang , boom.
+alright.
+want some.
+you like that stuff.
+I know.
+cold , huh.
+cold.
+hm.
+you eat some more.
+ah , mm yummy.
+cold.
+it's very cold.
+it's yummy , isn't it.
+want some more cheese.
+here you go.
+say.
+mm.
+yummy.
+wow.
+what.
+you were right about the smell.
+I know , it's like almost gone.
+uhw.
+say.
+mm.
+take out some of that little pasta I should make him.
+you would like that.
+uhoh.
+uhoh.
+where'd it go.
+down there.
+want me to get it.
+here you go.
+can I have it.
+can you give it to me.
+here.
+you don't wanna play that game.
+wop.
+uhoh.
+here , let me give you a little more , mm.
+uhoh , uhoh.
+it's good.
+it's good stuff.
+ah , mm.
+let me guess , coffee with cocoa mixed in.
+and more.
+and more , eggnog.
+yup.
+oh gross.
+so good.
+they were talking about making french toast with eggnog.
+who was.
+I don't know on the radio or something.
+I it seemed like you would like it , was my only thought.
+I didn't think I would like this but I I had an eggnog latte once.
+yuck.
+geuh.
+disgusting.
+uguh.
+, down it goes.
+on the floor.
+have some cheese.
+he always makes this face like unh.
+then he eats it right up.
+yeah.
+I have no idea what kind of education h w s.
+no , no , not unless that's you know that's standard.
+like , in their.
+in the address.
+or like on the webpage.
+I think that's just their ideal.
+yeah , no , no , no.
+but it says about h w s.
+well , okay.
+if it says that on the webpage , I think you could do it.
+I don't really want you to get that job anyway , so.
+well you know , it is kind of in the middle of nowhere , but I think it's
+	in a nice place.
+it I don't think it would be an.
+yeah , well.
+hoo_hoo.
+hm.
+pb.
+mm.
+okay , next time.
+is that yummy.
+mm.
+want some more.
+want more.
+deh.
+heheh.
+say , more mama.
+more more more.
+dahdadatetah.
+yeah.
+here's some more.
+mm.
+yummy.
+ah.
+mm.
+ehah.
+bang bang bang.
+bang , bang , bang.
+ready for some more.
+say.
+mm.
+bang , bang , bang , bang , bang.
+huh.
+oh , alright.
+well our roof was pretty cleared off , I mean , I don't think it.
+yeah.
+alright , I'm gonna turn this off for now.
+that's about a half an hour , hopefully.
+I'll do another half hour tomorrow.
+signing off.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017501-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child , FAT Father
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;09.15|male|||Target_Child|||
+@ID:	eng|Soderstrom|FAT||male|||Father|||
+@Media:	000915c, audio
+@Time Duration:	12:09-12:21
+@Date:	11-DEC-2003
+@Types:	long, preverbal, TD
+@End

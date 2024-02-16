@@ -1,0 +1,106 @@
+okay , all done.
+my_goodness.
+you're okay.
+it's okay , all done.
+see.
+ah , Theo , hi babe.
+hi baby.
+mm.
+mm hm hm hm hm hm hm hm.
+wanna go play.
+yeah.
+ah.
+do you see the baby over there.
+who's that.
+ah.
+who's that.
+ah , yay , it's a clapping baby.
+can you clap.
+yay.
+can you clap.
+yay.
+ah , yay.
+agugugah.
+agugugah , yeah.
+agu ah.
+ah , yeah.
+yay.
+uw.
+guh.
+oh.
+uguh.
+guh.
+alright.
+come on over here.
+you wanna sit on the floor.
+you gonna be mad about that too.
+let's see.
+well what should we do.
+you wanna play with this toy.
+look.
+yeah.
+bear.
+bear.
+rowr.
+rar.
+heh.
+cat.
+mrowr.
+hm hm hm.
+dog.
+ruff ruff.
+with a knickknack paddywack , give a dog a bone , this old man came rolling
+	home.
+can you sing that.
+yeah.
+you do something.
+you do it.
+see the dog.
+mm.
+what are you thinking about.
+hm hm hm hm.
+bear , elephant.
+elephant.
+yeah.
+pig , dog , ruff ruff.
+ruff ruff.
+cat.
+mrow.
+yeah.
+what's that.
+there.
+let's put some in the bucket.
+yeah.
+can you put him in.
+bear.
+can you put him in the bucket.
+look.
+you got it.
+can you put it in.
+ah.
+what do you think.
+yeah.
+can you get him out.
+what was that.
+bang bang bang , bang a bang a bang.
+alright.
+I'm gonna turn this off for now.
+we'll do another half hour tomorrow.
+we'll be done for the week.
+okay.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017491-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child , TOY Media
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;08.18|male|||Target_Child|||
+@ID:	eng|Soderstrom|TOY|||||Media|||
+@Media:	000818b, audio
+@Time Duration:	13:04-13:11
+@Date:	12-NOV-2003
+@Comment:	CHI is crying , not transcribed
+@Types:	long, preverbal, TD
+@Comment:	CHI starts fussing , not transcribed
+@Comment:	TOY continues to make noise
+@End

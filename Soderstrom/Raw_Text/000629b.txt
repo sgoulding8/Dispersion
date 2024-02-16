@@ -1,0 +1,62 @@
+okay.
+it's ten thirty.
+we're just hanging around the house.
+no , you can't play with that.
+I know.
+looks like fun.
+I know.
+oh.
+oh oh oh oh.
+you wanna have some ,.
+you wanna have some foodies.
+ubuh.
+nguh.
+let's see.
+how about.
+oh , that looks yum.
+and we'll put some of this in.
+ah it's gonna be so yummy.
+mix it all up.
+let's see.
+there's that.
+heh.
+hm.
+hold on.
+let me get it.
+this is hard to do , holding on to here.
+okay , now we're gonna dump that.
+okay.
+come in here.
+you sit right down.
+yeah.
+thala.
+goo.
+yeah.
+you hungry.
+I think you're hungry.
+uhoh , let's put it there.
+I think you're a hungry boy.
+mm.
+alright.
+oh , let's put a bib on you.
+chchchchchchch.
+hey.
+ah.
+oh boy.
+there we go.
+yeah.
+now we get the yummy stuff.
+mix mix mix.
+@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017471-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;06.29|male|||Target_Child|||
+@Media:	000629b, audio
+@Time Duration:	10:31-10:34
+@Date:	29-SEP-2003
+@Types:	long, preverbal, TD
+@Comment:	CHI crying , not transcribed
+@End

@@ -1,0 +1,259 @@
+a little more , Wednesday morning.
+icky.
+hey.
+wah.
+hehehe.
+owie.
+caught my hair.
+hm.
+bwah.
+wah.
+abwah.
+abuah.
+ab boo.
+boo.
+boo.
+hehe hehehe.
+egeh.
+ooboo.
+abh.
+abh.
+afh.
+hm.
+okay.
+ph ph.
+upuh.
+ukah.
+apwuhpwuh apwuhapwuh.
+can you say mama.
+mama.
+obwah.
+opwah.
+say mama.
+uah.
+uguh.
+agwaw.
+abwah.
+hm hm hm.
+you chewing on your toesies.
+yummy.
+stinky toes.
+uhuh.
+you got stinky toes.
+wah.
+heh.
+giugiay.
+boobooboo.
+uwabuh.
+wa ubuwah.
+ah boop.
+awlah.
+hawah.
+agubee.
+agubze.
+ooh.
+goowoo hehehe.
+wee.
+ack.
+crazy , crazy , crazy.
+oh.
+ah.
+uguyah.
+hm.
+hageguguh.
+habugubuh.
+bubuwaw.
+gub.
+bah.
+gubah.
+don't play with those.
+no.
+hi.
+where you going.
+abwab.
+abwab.
+ubwahbwah ubwab.
+bwah bwah bwah.
+abwabwah.
+abwabuh.
+abwahbwah.
+abuba abah.
+buba abah.
+pthl.
+no you can't have that , sorry.
+you wanna get up.
+here.
+wanna sit up.
+and now where you gonna go , hm.
+uhoh.
+uhoh.
+you okay.
+aw.
+cough cough cough.
+gagay gay.
+wa.
+gavavwavwa.
+up up up up up up up up up.
+oh , there you go.
+woo.
+excuse you.
+mm.
+kaboom.
+you're okay.
+can you get up.
+there you go.
+you got yourself right up.
+mm such a big boy.
+you are such a big boy.
+yeah.
+kaboom.
+hey.
+let's go.
+you wanna go play.
+let's go play.
+oof.
+here we go.
+here's some stuff.
+don't chew on my leg.
+hurts.
+no , no.
+no biting mama , here.
+can chew on that.
+uhuh.
+uhuh.
+here.
+there you go.
+is that good.
+hehehe.
+not as good as my leg , huh.
+ah.
+ah.
+shoo shoo.
+hm.
+aguah.
+what's that.
+ajo.
+dah.
+oogah.
+uah.
+guah.
+where you going.
+you gonna go see what's over there.
+go ahead.
+awah.
+gyah.
+uwuh.
+eh.
+guh.
+yeah.
+froggie.
+see , it's a froggie.
+look at that funny froggie.
+ugah.
+ugah.
+keehuh keuh.
+tooh.
+no no no no.
+you can't chew on those pants , yeah.
+you can chew on that.
+gotta get you a piece of corduroy , you can chew on.
+or is it just my leg that you like.
+yeah.
+yay.
+he's crazy.
+haha , crazy crazy.
+iyguguh.
+you do it.
+whoa.
+aygah.
+haygah.
+uluh.
+guguh.
+pthpthpthpthpth.
+th.
+hi.
+no biting.
+here , bite this.
+bite something else.
+uhuhuh uyah uyah.
+hudah.
+hoo_hoo.
+whoa.
+what is that.
+can you do it.
+you get him.
+you get him.
+heh.
+heh.
+haha hahaha.
+squeaky.
+hello.
+hm.
+yeah.
+hehehe hehehe.
+can you do it.
+oh , you did it.
+you did it.
+it's hard , isn't it.
+it's.
+see , what else have we got , here.
+how about this dingdong bell.
+you want that.
+yeah.
+dingaling.
+hehehe.
+gah.
+guh.
+ah.
+too small for you.
+yap.
+nguh.
+woothp.
+hm hm hm.
+ding ding ding ding ding.
+you do it.
+jingle jingle jingle.
+ooh.
+ooh.
+yeah , shake shake shake.
+shake shake shake.
+what are you doing.
+kah.
+gah.
+what's that.
+what's that.
+it's a shirt , yeah.
+ah.
+bang , bang.
+haha.
+boom , boom , boom.
+hehehe.
+alright.
+we're not talking very much are we.
+let's turn this off.
+we'll do some more tomorrow.
+wanna say byebye.
+byebye.
+pthpth.
+say byebye.
+you're not gonna say byebye.
+you don't know what I'm talking about.
+are you coughing.
+that's terrible.
+mm.
+mm.
+okay.
+byebye.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017494-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;08.23|male|||Target_Child|||
+@Media:	000823c, audio
+@Time Duration:	09:50-10:14
+@Date:	19-NOV-2003
+@Types:	long, preverbal, TD
+@Comment:	toy squeaking , continues to be squeaked for a while
+@End

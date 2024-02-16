@@ -1,0 +1,207 @@
+huh.
+hahaha I see you.
+I see you big boy.
+oh.
+whoops.
+here we go.
+okay.
+hold on.
+I'll clean this off.
+uyah.
+oh , my_goodness , are you okay.
+what happened.
+what was that.
+oh , baby , what's the matter.
+what's the matter.
+I know , I know.
+oh , poor baby.
+okay.
+I know , I know , it's very sad.
+ugah.
+uguh.
+ah.
+bawa.
+gawa.
+adadad.
+daydaydayday.
+da.
+dadi.
+dada.
+adadada.
+adadada.
+ayadadada.
+be right back.
+uhoh.
+oh , oh.
+oh.
+oh , ouchie.
+oh , you fell right on your little bum.
+oh.
+ouchie.
+are you okay.
+owie.
+poor baby.
+poor baby.
+ooh , ooh.
+ooh.
+what's in there.
+hey , what's in there.
+wanna see that.
+look , can you get inside.
+can you reach inside and see what's in there.
+look.
+op , look.
+hm hm hm.
+can you get it out.
+ah.
+oh , you wanna see what's in there.
+yeah.
+big boy.
+hey.
+who is that fellow.
+who is that handsome fellow.
+who is that cute baby.
+yeah.
+look at that baby.
+look at that cute baby.
+aren't you good looking.
+ah.
+oh , what are you doing.
+huh ,.
+huh.
+huhuh.
+yeah.
+guh.
+mgah.
+I know , you are so big.
+oops.
+you are such a big boy.
+mm.
+yeah.
+ah.
+adadada.
+oh man.
+shit.
+mdadada.
+mmdadadada.
+let's see.
+hm.
+let's see.
+oh , sorry.
+lost track of what we were doing here.
+hi , baby.
+oh you've got kind of a bump.
+you've a kind of a bump on your face.
+you must of keeled right over.
+look at all this stuff.
+look at all this stuff.
+don't squish your fingers.
+there you go.
+ah.
+mm.
+dadada.
+agagaga.
+gugaga.
+ageh.
+ag.
+ada.
+aga.
+hm hm hm hm hm.
+here , try this.
+look.
+wanna try that.
+yeah.
+ah.
+ah , yeah , try that.
+nanane.
+you could try on here.
+mhm.
+no no no no no no no.
+is that yummy.
+yeah.
+uhoh , where you going.
+where you going.
+gah.
+gah.
+ding dong ding dong dong dong.
+Theo.
+can you clap.
+yay.
+can you do it.
+yay.
+ay.
+hi.
+haha.
+boom.
+mm.
+yay.
+owau.
+buwawbu.
+zoop.
+look at that.
+oh.
+you coming to see me.
+uzap.
+yeah.
+hello , hello.
+hello big boy.
+mm.
+hi.
+ki.
+can you pull.
+woo.
+hm hm.
+look at that.
+hm hm , can you make it go.
+there.
+oh.
+there.
+get this one.
+woo.
+guh.
+guh.
+yeah.
+woo.
+you want me to do it again.
+that's right , push.
+you gotta put on the top , see , look.
+, I hate that song.
+try another one.
+oh.
+want some more.
+wuy.
+yeah.
+yeah.
+ungah.
+ungah.
+want me to make it go again.
+okay.
+there we go.
+what you got.
+bang bang bang.
+uah.
+ew.
+what.
+what.
+what are you talking about.
+what are you talking about.
+can you clap.
+yay , Theo.
+guh.
+alright , I'm gonna take a little break.
+we'll do some more later.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017481-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child , TOY Media
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;07.26|male|||Target_Child|||
+@ID:	eng|Soderstrom|TOY|||||Media|||
+@Media:	000726b, audio
+@Time Duration:	11:18-11:33
+@Date:	20-OCT-2003
+@Types:	long, preverbal, TD
+@Comment:	CHI continues crying , not transcribed
+@Comment:	CHI starts crying again , not transcribed
+@End

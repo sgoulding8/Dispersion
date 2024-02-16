@@ -1,0 +1,208 @@
+okay.
+here we got another twenty minutes here.
+before.
+bah.
+uwawa.
+get some later.
+ugagagah.
+what you got.
+hm.
+be right back.
+hi.
+you love that thing.
+whoops.
+hm.
+hm.
+you wanna come see me.
+hi.
+mguh.
+guh , look at those fishies.
+guh aguh.
+look at those fishies.
+khh.
+pfpf.
+khkh.
+khkh kh.
+boom.
+khkh.
+khh.
+kh kh kh.
+whoops.
+whoa , where'd you go.
+you wanna see that guy.
+uguh.
+uguh.
+uguh.
+guhguhguh.
+that's a remote.
+you love the remote.
+mm , mm.
+what does that guy do.
+hm.
+ah boo.
+hum , boo boo.
+ah boo.
+kk.
+kk khah khoo khoo.
+what else.
+look.
+woohoohoohoohoohoo.
+wow.
+what's in there.
+look , ah.
+peekaboo.
+where'd he go.
+peekaboo.
+you try it.
+where'd that butterfly go.
+ah.
+there he is.
+try another one.
+look.
+look.
+ah.
+peekaboo.
+where'd that ladybug go.
+peekaboo.
+how about this one.
+oh , this is a good one.
+what's under here , Theo.
+it's.
+oh , see the fishie.
+look , fishie.
+what's under there.
+ah.
+hello.
+where'd he go.
+hello.
+hello.
+I love this star.
+what's under there.
+look , honey.
+ah , you wanna empty your basket.
+now what is in there.
+bunny.
+it's a soft bunny.
+we'll put it in back.
+what else.
+how about this funny guy.
+hm hm.
+you like chewing on that.
+num num num num num num.
+let's see you crawl.
+can you do it.
+come on.
+you can do it.
+come over here.
+come here , Theo.
+come crawl over to me.
+come here.
+come here.
+ugeh.
+come here.
+ah.
+good job , come on.
+going that way.
+good.
+can you get there.
+go get it.
+go get it.
+move your arms.
+yay.
+go , Theo , go.
+you're going around in a circle.
+you silly boy.
+here , come see me.
+come here.
+ah.
+yeah.
+come on.
+go crawl.
+can you do it.
+kkh.
+kkh.
+kh.
+kh.
+kh.
+kh.
+yummy.
+, oh thank you.
+pththth.
+oh.
+enh.
+oh , I know I know I know.
+here.
+hi.
+go , baby.
+see if you can do it.
+oh , down you go , up again.
+mm.
+it's too hard , isn't it.
+I know.
+I know.
+come here.
+oyoyoyoyoyoyo.
+ayhee.
+hi.
+hi ,.
+say mama.
+he he.
+say , mama.
+can you say mama.
+ay.
+gonk.
+you're okay.
+oops.
+what.
+hey , see.
+what's that.
+ohwowowo.
+what are you doing.
+come on , I wanna have a little more.
+little more waffle.
+oh.
+hey.
+hey , come sit here , you can have some more.
+Cheerios , yummy.
+okay.
+there you go.
+there you go.
+hey.
+namunamunamunamu.
+hey what's the matter.
+are you getting tired already.
+are you really pretty.
+mamama.
+mama mama , you're right.
+mama.
+yes.
+say mama mama.
+ma.
+hm.
+mama mama.
+oh.
+ah.
+oh.
+alright.
+alright.
+alright.
+I guess it's time for a nap.
+tchtchtchtchtchtch shit , let me just get this off , I'll come get you.
+okay.
+oh , baby.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017483-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;07.26|male|||Target_Child|||
+@Media:	000726d, audio
+@Date:	20-OCT-2003
+@Types:	long, preverbal, TD
+@Comment:	long delay , lots_of banging noises
+@Comment:	long interlude with toy-playing noises , no speech
+@Comment:	CHI continues to fuss , not transcribed
+@Comment:	CHI starts to cry again
+@Comment:	CHI still crying
+@End

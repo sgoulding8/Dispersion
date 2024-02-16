@@ -1,0 +1,267 @@
+ah.
+alright , we'll do a little more here.
+it's mm wednesday , a quarter of eleven.
+hi.
+hi baby.
+are you feeling better.
+oh , you're gonna get me.
+here.
+take off your slippers , make things easier.
+oh , you're going to look at it.
+oh.
+hm hm hm hm.
+here , stand up.
+hi.
+come here.
+let's see if you can crawl today.
+come here.
+come on over here , Theo.
+come right over here.
+ah.
+oh.
+ah.
+oh.
+is there a little cough.
+poor baby.
+come on.
+mm , come on , you can do it.
+come on.
+come on.
+come on.
+yeah , you can do it.
+, you're almost there , you're almost there , come on , lift your arms.
+ah.
+I know , it's hard.
+oh.
+it's so hard.
+can you do it.
+yeah.
+alright , here.
+come here.
+I know.
+, you're starting to feel a little warm again , I think.
+bonk , poor baby.
+poor baby.
+here.
+let's look at this funny toy.
+wopawopawo.
+wopawopawo.
+no , don't play with that.
+I know , I know , but.
+oh , what's this one , this is a good one.
+look at that.
+look at that beautiful cover.
+ah.
+oh , look at it go.
+un guh.
+aguh.
+uguh.
+aguh.
+mm.
+mguh.
+yeah.
+it's good.
+hi.
+ah.
+oh.
+dunguah.
+yeah.
+aguh.
+aguh.
+guh.
+guh.
+here , you wanna build with some blocks.
+let's look at these.
+oh you're still busy with that.
+so pretty.
+so pretty.
+here.
+let's see what's in here.
+did he stop.
+look at these.
+belt.
+dododododo , look at all those animals.
+look at all those funny animals.
+birdy.
+piggy.
+caterpillar.
+whoa , look at that.
+look at that.
+ah.
+kh.
+guah.
+guah.
+oh.
+down they go , crash.
+boo , daboo , daboo.
+can you build.
+can you put that on top.
+haha.
+can you put it on.
+look.
+look Theo.
+can you do it.
+guh.
+guh.
+oh , you got it.
+see the kitties.
+look.
+meow.
+kitties.
+meow.
+ogah.
+yeah , kitties.
+uguh.
+aguh.
+nice kitty.
+yeah.
+haha.
+oh.
+what a nice kitty.
+you wanna put him on there.
+whoa.
+aguh.
+yeah , here , you put one on.
+can you do it.
+haha.
+put it right on there.
+ah.
+look.
+ah.
+bigger.
+wanna try.
+doguh.
+koogoogoo.
+there , put some in.
+oop.
+shake shake shake.
+shake shake shake.
+can you get him out.
+yeah.
+oh , you almost got it.
+dododododododo.
+kitty.
+there's that funny kitty again.
+guguh.
+guguh.
+guguguh.
+see the cow.
+you like him too.
+he goes moo.
+moo.
+you don't like the cow.
+okay.
+you don't hafta look at the cow.
+oh , look at that.
+knock it down.
+go ahead.
+ooh.
+crash , yay.
+can you knock it down.
+, ah.
+gonna knock it down with your feet.
+so funny.
+guah.
+aguh.
+goo greh.
+googuh.
+guh.
+crash.
+crash.
+ay.
+coo.
+mm.
+guh.
+mm.
+no , don't play with that.
+gueh.
+yeah , I know you like it.
+no , you can't play with that.
+yeah.
+choochoochoochoochoochoo whoo , kaboom.
+gonna crawl.
+oh , okay.
+oopsie daisy.
+oopsie daisy.
+hey.
+let's put something in there.
+look.
+what's in there.
+can you get him out.
+here you go.
+I know , baby.
+up up up.
+hm hm.
+whoa.
+uguh.
+guh , you're kind of chasing that around.
+makes a good noise.
+I'll be right back , I just wanna check one thing.
+hm.
+I'll be right there , sweetie.
+shh.
+hm hm.
+oh , boo_boo.
+oh , little boo_boo.
+I know.
+come here , come here , come here , come here , come here.
+you know what , let's check your temperature , let's change your diaper.
+let's see if you've gotten sick again , and if you are , I'll give you some
+	Motrin.
+okay.
+I know.
+it's okay.
+I know , it's okay.
+you're sleepy already.
+poor baby.
+poor baby.
+look.
+I know ,.
+I know.
+let's see.
+hang on.
+let's see.
+hundred and one.
+that's not so bad.
+that's better than what it's been.
+okay.
+shh.
+okay.
+okay.
+I know.
+almost done.
+just snapping you up , one.
+look.
+shh two.
+three.
+four.
+five.
+okay.
+all done , baby.
+I know.
+I know.
+are you sleepy.
+okay.
+I guess he's ready for another nap.
+well.
+I'll just hafta do more later.
+sorry we keep getting interrupted.
+fifteen minutes , okay.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017485-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;08.05|male|||Target_Child|||
+@Media:	000805a, audio
+@Time Duration:	10:50-11:05
+@Date:	29-OCT-2003
+@Warning:	Overlaps and the speech of CHI are not carefully checked.
+@Types:	long, preverbal, TD
+@Comment:	CHI continues to cry , not transcribed
+@Comment:	CHI starts to fuss , not transcribed
+@Comment:	CHI starts to fuss again , not transcribed
+@Comment:	CHI continues to cry , not transcribed
+@Comment:	long pause with CHI crying
+@End

@@ -1,0 +1,122 @@
+okay , there.
+now we don't hafta worry about the battery.
+okay.
+Theo.
+yay.
+can you clap.
+awah.
+let me see.
+yay.
+the itsy bitsy spider went up the water+spout.
+can you do it.
+you're busy with a toy.
+look at that bell.
+ding ding ding ding ding ding ding.
+yeah.
+ding ding ding ding ding ding ding.
+yeah.
+yeah.
+whoa.
+aguh.
+cool.
+oguh.
+oguh.
+oh good.
+dingading.
+it's stuck on there , isn't it.
+hm hm.
+it's stuck on there.
+the itsy bitsy spider went up the water+spout , down came the rain and
+	washed the spider out.
+look , Theo.
+out came the sun and dried up all the rain , and the itsy bitsy spider went
+	up the spout again.
+can you do it.
+yay.
+ah.
+rr.
+mm hm hm hm.
+hm hm hm hm hm hm.
+ball ball ball.
+ah.
+abu.
+can you do that.
+can you go bang bang bang.
+bang bang bang bang.
+ah.
+yeah.
+ah.
+yeah , bang bang bang.
+good job.
+let go.
+let go.
+see , look.
+there it goes.
+whee.
+wanna try it.
+you do it.
+you do it.
+oh.
+there it goes , whee , down , down , down.
+ding.
+you wanna come see mama.
+hi you.
+hi.
+are you a little guy.
+oh no , don't play with those.
+those aren't for babies.
+hm.
+wanna go look at the fishies.
+look.
+ah , who's that.
+who's that.
+beh.
+oh , it's your favorite guy.
+uguh.
+fishies.
+heh.
+hey , fishies.
+fish.
+yeah.
+hehe , fish.
+fishies.
+see.
+hm hm hm hm hm hm.
+oh , look at those funny fishies.
+here , I'm gonna take off your slippers , then you can stand up.
+Theo.
+look at those fishies.
+hi , fish.
+hm hm.
+what are they doing.
+agah.
+mhm.
+yeah , they're swimming.
+goopgoopgoop.
+uhi.
+yeah , jujuga.
+ah.
+hey.
+hey , fishies.
+aguh.
+aguh.
+ah.
+yeah.
+they're funny.
+hey , fishies.
+yeah.
+auh.
+guh.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017487-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;08.05|male|||Target_Child|||
+@Media:	000805c, audio
+@Time Duration:	11:23-11:29
+@Date:	30-OCT-2003
+@Types:	long, preverbal, TD
+@Comment:	cuts off due to lack of space on tape
+@End

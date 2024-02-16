@@ -1,0 +1,119 @@
+okay , try this again.
+it's now one o'clock , or five minutes to one o'clock.
+same Monday , January fifth.
+and he's got a pepper.
+heah.
+yeah.
+yeah.
+going to make some lunch.
+what else could you eat.
+what else could you eat.
+uhwuh.
+wuh.
+you want some.
+maybe I'll fix up some of these.
+heah.
+yeah , put some butter on them and heat them up and stuff , make them
+	yummy.
+I'm gonna make them yummy for you.
+mm hm.
+what's the matter.
+what's the matter.
+oh , honey+bunny.
+what's the matter.
+that's yogurt.
+yogurt.
+okay.
+that might need another a minute or so.
+let me do this first.
+what do you got.
+what are you doing.
+you throwing everything on the floor.
+look at that.
+look at that.
+euh.
+wow.
+yucky.
+am I spilling your beans.
+ooweh.
+okay.
+okay honey , I'm gonna close this now.
+I know you like playing in there , but.
+there.
+some of this butter.
+mm what'd you find.
+edh.
+hey.
+hey , what'd you find.
+mm.
+okay.
+okay , there's mama's lunch.
+here's Theo's lunch.
+come on baby , upubububububub , see.
+look what we got.
+uheh.
+good stuff.
+good stuff for you.
+you hungry.
+ah , are you a hungry boy.
+mm.
+hold on.
+okay.
+look out for your fingers.
+one two , ah , bang bang bang.
+hi.
+alright , here.
+let's start with this stuff.
+those are gonna be yummy.
+oom.
+try one , I fixed them up good.
+want some of this.
+mm , yum.
+some more.
+cheese.
+mm.
+no , not good.
+here.
+want more.
+ah , mm yum.
+mm.
+yummy.
+you know what I'm gonna do.
+I'm gonna put this on a spoon , because it's good stuff.
+you're gonna like it.
+want me to smush it up a little.
+there , smush it all up.
+now you can really be good.
+see how yum that is.
+good , right.
+that's right , good job , cleaning your mouth.
+mm.
+yum yum yum , alright , I'll smush some more up.
+that's how you like them.
+I'll smush them up and give them to you.
+say.
+no-no , don't scoop it out.
+it's yum.
+mm yahyahyah.
+mgh mm , bahrahrah.
+wawawa.
+wawawao.
+wawawa.
+oowawawahoowigodh.
+mamamagah.
+oh , somebody's calling again.
+ay ay ay , it's just one of those days.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017503-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;10.11|male|||Target_Child|||
+@Media:	001011a, audio
+@Time Duration:	12:53-13:00
+@Date:	05-JAN-2004
+@Warning:	Overlaps and the speech of CHI are not carefully checked.
+@Types:	long, preverbal, TD
+@Comment:	Food preparation noises in background
+@End

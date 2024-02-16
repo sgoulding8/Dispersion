@@ -1,0 +1,107 @@
+yeah.
+hm.
+hey.
+did you have a good sleep.
+mhm.
+hi , oh , nice hugs , thank you.
+hi.
+hi.
+what are you doing.
+hm.
+oh don't play with that.
+yeah.
+no.
+heh.
+Theo.
+mm.
+did you have a good rest.
+ah , hi.
+hi , hm hm.
+I was just writing your brother a note.
+yeah.
+ah mm.
+oh , you need snuggles , don't you.
+good sleep.
+you had a good sleep.
+yes you did.
+no , you just can't play with that.
+you can't have it.
+I'm gonna put it way up high.
+no , nope nope nope nope nope.
+you wanna come play on the floor.
+come here.
+what's that.
+ah.
+no , you don't wanna play on the floor.
+why not.
+what's the matter.
+oh , poor baby.
+hey.
+you wanna stand up.
+what's that.
+oh.
+oh , big boy.
+what a big boy you are.
+yeah , look at you.
+mm , you are so big.
+yes , you are.
+hm.
+mm.
+hm , here , sit down.
+kaboom.
+kaboom.
+kaboom.
+kaboom.
+kaboom.
+, you come up.
+look at you.
+what do you see.
+whoa.
+don't eat it.
+aw , you wanna look at this.
+ah , look at the beads , see.
+look at that.
+we'll put this up here.
+see the beads.
+ah.
+you got them.
+you got them.
+I'll get some more over here , okay.
+vroom vroom vroom vroom vroom vroom vroom vroom vroom vroom vroom vroom
+	vroom vroom.
+hm hm hm , oh , they're way up high.
+they're way up high , yes they are.
+hapth.
+oh , look at that.
+uhoh , don't fall down.
+don't fall down.
+ghghgh.
+guh.
+kh.
+kh.
+hahaha.
+hehe.
+spoons.
+hm.
+ag.
+agh.
+what are you doing.
+hm.
+there you go.
+khookhookhookhoo.
+khookhookhookhookhoo.
+, got your toes , chchchchchch.
+toesies.
+toesies.
+@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017477-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;07.19|male|||Target_Child|||
+@Media:	000719b, audio
+@Time Duration:	10:39-10:47
+@Date:	14-OCT-2003
+@Types:	long, preverbal, TD
+@End

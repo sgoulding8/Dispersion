@@ -1,0 +1,274 @@
+ooh.
+guh.
+uguah.
+, see the fishies.
+ah.
+look at them go.
+a.
+whoa.
+auh.
+yeah.
+oh.
+those fishies are so cool.
+look at them.
+look at those pretty fishies.
+yeah.
+yeah.
+fishie.
+fishie.
+yeah.
+yeah.
+see.
+here , you wanna stand up.
+look.
+oh.
+fishie.
+yeah.
+uhihihih.
+oh.
+ah.
+whoa.
+see the bubbles.
+see the pretty bubbles.
+oh oh oh.
+huh.
+hm hm hm hm.
+fishie.
+hi , fishie.
+hi , fishie.
+yeah.
+who's coming to see you.
+yeah.
+oh.
+take a look at your fingers.
+fishie , fishie.
+aguh.
+aguh.
+uguh.
+yeah.
+auh.
+hi there.
+they're looking at you.
+haha.
+oh , I know.
+fishie.
+fishie.
+uguh.
+yeah.
+look at them go.
+eheh.
+look at that fishie go.
+ah.
+oh.
+oh.
+woo.
+whoa.
+guh.
+yeah.
+what a nice fishie.
+what a.
+oh , yes.
+ooh , boy , gah.
+what are you talking about.
+ooh ooh.
+yeah.
+yeah.
+ooh.
+ooh.
+euh.
+are they making you mad.
+huh huh.
+haha.
+huh.
+yeah.
+okay , done with the fishies.
+ah.
+are you.
+ah.
+you wanna stand up.
+here , stand right up and have a look.
+huh huh huh huh.
+hm hm hm.
+are you talking to them.
+hi , fishie.
+yeah.
+hi , fishie.
+hello.
+oh , yes.
+they're so pretty.
+so pretty.
+here.
+here , you wanna stand up over here.
+okay.
+ooh.
+owa.
+eh.
+yeah , that's Charlie's book.
+boom.
+are you getting hungry.
+mama's getting hungry.
+uhoh.
+uhoh.
+yeah.
+that's not good for babies.
+here.
+you wanna look at a book.
+see the kitty.
+look.
+see the soft kitty.
+can you feel him.
+ah , look at the soft kitty.
+ah , ah.
+you closed the book.
+yeah.
+you gonna eat it.
+here.
+we can look at this one.
+see the doggies.
+oh look at that funny doggie he's got a shoe.
+yeah.
+oh look , they're eating , nyum nyum nyum nyum nyum nyum nyum.
+they're all eating food , yum yum yum yum yum.
+bang bang bang.
+see , look at the puppy's chewing on things.
+just like you.
+cause I'm chewing on a ball.
+chewing on a stick.
+chewing on a shoe.
+, peekaboo.
+peekaboo.
+hehe.
+ah.
+doom doom.
+you wanna look at some more pictures.
+let's see.
+ah , look , now they're going woof woof woof.
+hear the doggies go woof woof.
+heh.
+yeah.
+eh.
+oh , look at the big cow , moo.
+ueh.
+you're looking at the fishies again.
+aren't they so cool.
+whoa.
+yeah , it's so beautiful.
+yeah , oh , my.
+eh.
+ooh.
+so lovely.
+yeah.
+so lovely.
+wa.
+gla.
+ooh.
+you chewing there.
+look at the cow.
+says moo.
+hm hm.
+moo.
+op.
+ohwohwhoh.
+, what do you wanna do.
+can you stand up again.
+heh ooh.
+you really like those fish today.
+, see what else is in there.
+is it that one.
+the wheels on the bus.
+the wheels on the bus go round and round.
+no.
+not that one.
+no no.
+let's see.
+mkay.
+tickle tickle.
+oh , look.
+squelsh , squelsh in the mud.
+see the babies.
+they're in the mud.
+squus squush.
+squish.
+whoa.
+splishsplash.
+rub a dub.
+look at those nice babies.
+okay , no book.
+what do you wanna do.
+what do you wanna do.
+hm.
+could we stand up again.
+ah , boo.
+hey.
+I see you.
+whee , you're flying.
+you're flying baby.
+mmmshboom.
+yeah.
+no , don't play with that.
+don't play with that.
+I know , I know.
+it's very cool , but you can't play with it.
+how let's see what's over here.
+uah.
+uah.
+yeh.
+how about this one.
+remember this guy.
+he's a good guy.
+he squeaks and everything , and he crinkles.
+no.
+you don't like that guy anymore.
+how about the peekaboo book.
+look.
+peekaboo.
+where'd he go.
+peekaboo.
+you're gonna eat him.
+where'd he go , Theo.
+huh.
+can you find him.
+where'd he go.
+he's gone.
+Theo.
+hello.
+gagaga.
+yayayaya.
+aya.
+yaya.
+gaga.
+oh_my_goodness.
+alunah.
+apth.
+oh oh.
+ah.
+you almost bumped your head , but you didn't , you're okay.
+okay.
+what's that.
+scrape scrape scrape.
+mm.
+you're getting too grouchy , aren't you.
+we gotta do something different.
+you wanna try to pull up.
+oh_my_goodness.
+don't pull up with your mouth.
+well that's gonna hurt , you goofball.
+ooh.
+alright.
+I'll be done for now.
+I owe you about , twenty minutes ,.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UTF8
+@PID:	11312/c-00017482-1
+@Begin
+@Languages:	eng
+@Participants:	MOT Mother , CHI Theo Target_Child , TOY Media
+@ID:	eng|Soderstrom|MOT||female|||Mother|||
+@ID:	eng|Soderstrom|CHI|0;07.26|male|||Target_Child|||
+@ID:	eng|Soderstrom|TOY|||||Media|||
+@Media:	000726c, audio
+@Time Duration:	11:18-11:33
+@Date:	20-OCT-2003
+@Types:	long, preverbal, TD
+@Comment:	CHI starts to cry , not transcribed
+@Comment:	CHI continues to fuss , not transcribed
+@End
